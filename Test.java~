@@ -70,126 +70,6 @@ import adword.json.results;
 public class AdgroupAPI extends Campaign{
 
 
-//	
-//	public static String addDisplayAdgroup(Session session,  DisplayCampaign camp,Long campaign_id) throws Exception {
-//		MongoClient client =null;
-//		try {
-//            results res = new results();
-//            List<AdGroup> agroup = createDisplayAdgroup(session,camp,campaign_id);
-//            JSONParser parser=new JSONParser();
-//		   	Object object = parser.parse(new FileReader("/home/dvgnaveen/Adwords api/adwords/new_test_adword/src/config.json"));
-//		   	JSONObject jsonobject=(JSONObject) object;
-//		   	String  db_name=(String) jsonobject.get("db_name");
-//		   	 client = MySingleton.getInstance();
-//		   @SuppressWarnings("deprecation")
-//		   	DB db = client.getDB(db_name);  
-//            BasicDBObjectBuilder docBuilder = BasicDBObjectBuilder.start();
-//            for (AdGroup result : agroup) {
-////                if (camp.getLocations() != null) {
-////                    adword.interfaces.Location camp_loc = camp.getLocations();
-////                    //if(camp)
-////                }
-//            	camp.setAdGroupId(result.getId());
-//            	  List<AdGroupCriterion> bid_keyword = createBiddableKeyword(session,camp);
-//        	  
-//                DBCollection adgroup_db= db.getCollection("adwords_adgroups");
-//  		        ObjectId id = ObjectId.get();
-//  				docBuilder.add("_id", id);
-//  				docBuilder.add("adgroup_id", result.getId());
-//  				docBuilder.add("name", result.getName());
-//  				docBuilder.add("campaign_id", result.getCampaignId());
-//  				AdGroupType ag_type = result.getAdGroupType();
-//  				docBuilder.add("adgroup_type",ag_type.getValue() );
-//  				if (result.getBiddingStrategyConfiguration()!=null){
-//  			BiddingStrategyConfiguration bid_config = result.getBiddingStrategyConfiguration();
-//  				docBuilder.add("bidding_strategy_id", bid_config.getBiddingStrategyId());
-//  				docBuilder.add("bidding_strategy_name",  bid_config.getBiddingStrategyName());
-//  				if (bid_config.getBiddingStrategySource()!=null){
-//  				BiddingStrategySource b_source = bid_config.getBiddingStrategySource();
-//  				docBuilder.add("bidding_strategy_source", b_source.getValue());
-//  				}
-//  				if (bid_config.getBiddingStrategyType()!=null){
-//  				 BiddingStrategyType b_type = bid_config.getBiddingStrategyType();
-//  				docBuilder.add("bidding_strategy_type", b_type.getValue());
-//  				}
-//  				}
-//  				AdGroupStatus status = result.getStatus();
-//  				docBuilder.add("status", status.getValue());
-//  				
-//  				DBObject insert_object=docBuilder.get();
-//  				adgroup_db.insert(insert_object);
-//                res.setSuccess(true);
-//                res.setResult(Long.toString(result.getId()));
-//            }
-//            return json_encoder.javaToJson(res);
-//
-//        } catch (Exception e) {
-//            throw e;
-//        }finally{
-//        	client.close();
-//        }
-//
-//    }
-
-	
-//	public static String addDisplayAdgroup(Session session,  DisplayCampaign camp,Long campaign_id) throws Exception {
-//		MongoClient client =null;
-//		try {
-//            results res = new results();
-//            List<AdGroup> agroup = createDisplayAdgroup(session,camp,campaign_id);
-//            JSONParser parser=new JSONParser();
-//		   	Object object = parser.parse(new FileReader("/home/dvgnaveen/Adwords api/adwords/new_test_adword/src/config.json"));
-//		   	JSONObject jsonobject=(JSONObject) object;
-//		   	String  db_name=(String) jsonobject.get("db_name");
-//		   	 client = MySingleton.getInstance();
-//		   @SuppressWarnings("deprecation")
-//		   	DB db = client.getDB(db_name);  
-//            BasicDBObjectBuilder docBuilder = BasicDBObjectBuilder.start();
-//            for (AdGroup result : agroup) {
-////                if (camp.getLocations() != null) {
-////                    adword.interfaces.Location camp_loc = camp.getLocations();
-////                    //if(camp)
-////                }
-//            	camp.setAdGroupId(result.getId());
-//            	  List<AdGroupCriterion> bid_keyword = createBiddableKeyword(session,camp);
-//        	  
-//                DBCollection adgroup_db= db.getCollection("adwords_adgroups");
-//  		        ObjectId id = ObjectId.get();
-//  				docBuilder.add("_id", id);
-//  				docBuilder.add("adgroup_id", result.getId());
-//  				docBuilder.add("name", result.getName());
-//  				docBuilder.add("campaign_id", result.getCampaignId());
-//  				AdGroupType ag_type = result.getAdGroupType();
-//  				docBuilder.add("adgroup_type",ag_type.getValue() );
-//  				if (result.getBiddingStrategyConfiguration()!=null){
-//  			BiddingStrategyConfiguration bid_config = result.getBiddingStrategyConfiguration();
-//  				docBuilder.add("bidding_strategy_id", bid_config.getBiddingStrategyId());
-//  				docBuilder.add("bidding_strategy_name",  bid_config.getBiddingStrategyName());
-//  				if (bid_config.getBiddingStrategySource()!=null){
-//  				BiddingStrategySource b_source = bid_config.getBiddingStrategySource();
-//  				docBuilder.add("bidding_strategy_source", b_source.getValue());
-//  				}
-//  				if (bid_config.getBiddingStrategyType()!=null){
-//  				 BiddingStrategyType b_type = bid_config.getBiddingStrategyType();
-//  				docBuilder.add("bidding_strategy_type", b_type.getValue());
-//  				}
-//  				}
-//  				AdGroupStatus status = result.getStatus();
-//  				docBuilder.add("status", status.getValue());
-//  				
-//  				DBObject insert_object=docBuilder.get();
-//  				adgroup_db.insert(insert_object);
-//                res.setSuccess(true);
-//                res.setResult(Long.toString(result.getId()));
-//            }
-//            return json_encoder.javaToJson(res);
-//
-//        } catch (Exception e) {
-//            throw e;
-//        }finally{
-//        	client.close();
-//        }
-//	}
 
 	
 	public static String addDisplayAdgroup(Session session,  DisplayCampaign camp,Long campaign_id) throws Exception {
@@ -202,21 +82,13 @@ public class AdgroupAPI extends Campaign{
 		   	Object object = parser.parse(new FileReader("/home/dvgnaveen/Adwords api/adwords/new_test_adword/src/config.json"));
 		   	JSONObject jsonobject=(JSONObject) object;
 		   	String  db_name=(String) jsonobject.get("db_name");
-//		   	 client = new database().createInstance();
-//=======
-//		   	Object object = parser.parse(new FileReader("/home/dvgnaveen/Adwords api/adwords/new_test_adword/src/config.json"));
-//		   	JSONObject jsonobject=(JSONObject) object;
-//		   	String  db_name=(String) jsonobject.get("db_name");
-		   	 client = MySingleton.getInstance();
+   	 client = MySingleton.getInstance();
 
 		   @SuppressWarnings("deprecation")
 		   	DB db = client.getDB(db_name);  
             BasicDBObjectBuilder docBuilder = BasicDBObjectBuilder.start();
             for (AdGroup result : agroup) {
-//                if (camp.getLocations() != null) {
-//                    adword.interfaces.Location camp_loc = camp.getLocations();
-//                    //if(camp)
-//                }
+
             	camp.setAdGroupId(result.getId());
             	  List<AdGroupCriterion> bid_keyword = createBiddableKeyword(session,camp);
         	  
